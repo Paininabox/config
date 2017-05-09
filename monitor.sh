@@ -1,4 +1,5 @@
 #!/bin/bash
+#Turns off my other monitor during movies or youtube videos, less distraction
 
 monitor=DVI-I-1
 
