@@ -84,4 +84,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=/home/dustin/.cfg/ --work-tree=/home/dustin'
-alias psyu='sudo pacman -Syu'
+alias psyu='sudo yaourt -Syu'
