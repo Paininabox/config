@@ -73,6 +73,7 @@ exec xset s 1800
 bindsym $mod+Shift+v exec shutdown now
 bindsym $mod+t exec monitor
 exec discord
+exec xset -dpms
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
