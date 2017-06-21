@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=/home/dustin/.cfg/ --work-tree=/home/dustin'
 alias psyu='sudo yaourt -Syu'
+alias windows='grub-reboot 3'
