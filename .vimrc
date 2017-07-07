@@ -50,4 +50,4 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2
 Bundle 'farseer90718/vim-taskwarrior'
-
+set expandtab
