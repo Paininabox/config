@@ -1,6 +1,6 @@
 #!/bin/bash
 # My first script
-hp=alsa_output.pci-0000_07_00.0.analog-stereo
+hp=alsa_output.pci-0000_07_00.0.analog-surround-51
 #echo "Setting default sink to: $1";
 pacmd set-default-sink $hp
 pacmd list-sink-inputs | grep index | while read line
