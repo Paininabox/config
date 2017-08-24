@@ -70,6 +70,7 @@ exec unified-remote-server
 exec firefox
 exec musicplayer
 exec /opt/urserver/urserver
+exec_always --no-startup-id i3-msg 'workspace 6; exec urxvt -e vim ~/.config/polybar/config'
 exec xset s 1800
 bindsym $mod+Shift+v exec shutdown now
 bindsym $mod+t exec monitor
