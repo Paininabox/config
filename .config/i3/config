@@ -65,7 +65,7 @@ bindsym $mod+ctrl+semicolon workspace next
 #bindsym $mod+Shift+m exec i3-input -F 'mark %s' -P 'Mark name: '
 #bindsym $mod+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 for_window [class='Zenity'] move to workspace 1
-exec unified-remote-server
+exec_always unified-remote-server
 exec firefox
 exec musicplayer
 exec /opt/urserver/urserver
