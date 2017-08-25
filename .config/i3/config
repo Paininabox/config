@@ -27,7 +27,7 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec_always --no-startup-id polybar example &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 new_window normal
 exec_always --no-startup-id "xrandr --output HDMI-0 --left-of DVI-I-1"
 bindsym $mod+x exec urxvt -e vim ~/.config/i3/config
