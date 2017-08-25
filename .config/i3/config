@@ -76,7 +76,7 @@ bindsym $mod+Shift+Control+v exec reboot
 bindsym $mod+t exec monitor
 exec discord
 exec xset -dpms
-exec_always --no-startup-id i3-msg 'workspace 8; exec konversation'
+exec --no-startup-id i3-msg 'workspace 8; append_layout /home/dustin/workspace-8.json; exec konversation'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
