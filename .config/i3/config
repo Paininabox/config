@@ -65,16 +65,18 @@ bindsym $mod+ctrl+semicolon workspace next
 #bindsym $mod+Shift+m exec i3-input -F 'mark %s' -P 'Mark name: '
 #bindsym $mod+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 for_window [class='Zenity'] move to workspace 1
-exec unified-remote-server
+exec_always unified-remote-server
 exec firefox
 exec musicplayer
 exec /opt/urserver/urserver
 exec --no-startup-id i3-msg 'workspace 6; exec urxvt -e vim ~/.config/polybar/config'
 exec xset s 1800
 bindsym $mod+Shift+v exec shutdown now
+bindsym $mod+Shift+Control+v exec reboot
 bindsym $mod+t exec monitor
 exec discord
 exec xset -dpms
+exec_always --no-startup-id i3-msg 'workspace 8; exec konversation'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
