@@ -33,7 +33,7 @@ exec_always --no-startup-id "xrandr --output HDMI-0 --left-of DVI-I-1"
 bindsym $mod+x exec urxvt -e vim ~/.config/i3/config
 bindsym $mod+z exec firefox
 mouse_warping none
-exec_always --no-startup-id "feh --bg-scale ~/Downloads/wallhaven-6352.jpg"
+exec_always --no-startup-id "feh --bg-scale --no-xinerama ~/pic.jpg"
 exec_always --no-startup-id "compton -b"
 new_window none
 gaps outer 0
