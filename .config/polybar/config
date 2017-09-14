@@ -28,17 +28,17 @@ background = #acb6c6
 #foreground = #817c64
 foreground = #3f524e
 
-radius = 1
+radius = 10
 
-line-size = 1
+line-size = 3
 line-color = #f00
 
-border-size = 1
+border-size = 3
 border-left-size = 50
 border-right-size = 50
 border-top-size = 10
 border-color = #0000ffff
-padding-left = 1
+padding-left = 0
 padding-right = 1
 module-margin = 0
 

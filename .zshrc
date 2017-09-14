@@ -89,3 +89,4 @@ alias psyu='sudo yaourt -Syu'
 windows() {
         sudo grub-reboot 2 && reboot > /dev/null 2>&1
 }
+alias youtube='mpsyt'

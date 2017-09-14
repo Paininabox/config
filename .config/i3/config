@@ -29,7 +29,7 @@ font pango:monospace 8
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 new_window normal
-exec_always --no-startup-id "xrandr --output HDMI-0 --left-of DVI-I-1"
+#exec_always --no-startup-id "xrandr --output GPU-0.HDMI-0 --left-of GPU-1.HDMI-0"
 bindsym $mod+x exec urxvt -e vim ~/.config/i3/config
 bindsym $mod+z exec firefox
 mouse_warping none
@@ -49,16 +49,16 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -option caps:escape
 assign [class="Google Play Music Desktop Player"] 10
 assign [class="discord"] 9
-workspace 1 output HDMI-0
-workspace 2 output HDMI-0
-workspace 3 output HDMI-0
-workspace 4 output HDMI-0
-workspace 5 output HDMI-0
-workspace 6 output DVI-I-1
-workspace 7 output DVI-I-1
-workspace 8 output DVI-I-1
-workspace 9 output DVI-I-1
-workspace 10 output DVI-I-1
+workspace 1 output GPU-0.HDMI-0
+workspace 2 output GPU-0.HDMI-0
+workspace 3 output GPU-0.HDMI-0
+workspace 4 output GPU-0.HDMI-0
+workspace 5 output GPU-0.HDMI-0
+workspace 6 output GPU-1.HDMI-0
+workspace 7 output GPU-1.HDMI-0
+workspace 8 output GPU-1.HDMI-0 
+workspace 9 output GPU-1.HDMI-0
+workspace 10 output GPU-1.HDMI-0
 bindsym $mod+ctrl+j workspace prev
 bindsym $mod+ctrl+semicolon workspace next
 #broken
@@ -202,4 +202,4 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
+ 
