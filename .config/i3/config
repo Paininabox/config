@@ -33,7 +33,7 @@ new_window normal
 bindsym $mod+x exec urxvt -e vim ~/.config/i3/config
 bindsym $mod+z exec firefox
 mouse_warping none
-exec_always --no-startup-id "feh --bg-scale --no-xinerama ~/Downloads/wallhaven-54777.jpg"
+exec_always --no-startup-id "feh --bg-scale --no-xinerama ~/Downloads/wallhaven-330210.jpg"
 exec_always --no-startup-id "compton -b"
 new_window none
 gaps outer 0
@@ -59,6 +59,8 @@ workspace 7 output GPU-1.HDMI-0
 workspace 8 output GPU-1.HDMI-0 
 workspace 9 output GPU-1.HDMI-0
 workspace 10 output GPU-1.HDMI-0
+workspace 11 output GPU-0.HDMI-0
+workspace 12 output GPU-1.HDMI-0
 bindsym $mod+ctrl+j workspace prev
 bindsym $mod+ctrl+semicolon workspace next
 #broken
@@ -157,6 +159,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+c workspace 11; workspace 12
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
