@@ -49,6 +49,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -option caps:escape
 assign [class="Google Play Music Desktop Player"] 10
 assign [class="discord"] 9
+assign [class='Liferea'] 2
+assign [class='firefox'] 1
 workspace 1 output GPU-0.HDMI-0
 workspace 2 output GPU-0.HDMI-0
 workspace 3 output GPU-0.HDMI-0
@@ -79,6 +81,7 @@ bindsym $mod+t exec monitor
 exec discord
 exec xset -dpms
 exec --no-startup-id i3-msg 'workspace 8; append_layout /home/dustin/workspace-8.json; exec konversation'
+exec --no-startup-id i3-msg 'workspace 2; append_layout /home/dustin/workspace-2.json; exec liferea'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
