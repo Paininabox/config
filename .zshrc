@@ -90,3 +90,4 @@ windows() {
         sudo grub-reboot 2 && reboot > /dev/null 2>&1
 }
 alias youtube='mpsyt'
+alias ts='ssh dustin@192.168.1.99'
