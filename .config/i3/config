@@ -29,13 +29,14 @@ font pango:monospace 8
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 new_window normal
-exec_always --no-startup-id "xrandr --output HDMI-0 --left-of DVI-I-1"
+#exec_always --no-startup-id "xrandr --output GPU-0.HDMI-0 --left-of GPU-1.HDMI-0"
 bindsym $mod+x exec urxvt -e vim ~/.config/i3/config
-bindsym $mod+z exec firefox
+bindsym $mod+z exec qutebrowser
 mouse_warping none
-exec_always --no-startup-id "feh --bg-scale ~/Downloads/wallhaven-6352.jpg"
+exec_always --no-startup-id "feh --bg-scale --no-xinerama ~/Downloads/wallhaven-330210.jpg"
 exec_always --no-startup-id "compton -b"
 new_window none
+exec task sync
 gaps outer 0
 gaps inner 10
 bindsym $mod+p exec ~/hp.sh
@@ -49,16 +50,20 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always setxkbmap -option caps:escape
 assign [class="Google Play Music Desktop Player"] 10
 assign [class="discord"] 9
-workspace 1 output HDMI-0
-workspace 2 output HDMI-0
-workspace 3 output HDMI-0
-workspace 4 output HDMI-0
-workspace 5 output HDMI-0
-workspace 6 output DVI-I-1
-workspace 7 output DVI-I-1
-workspace 8 output DVI-I-1
-workspace 9 output DVI-I-1
-workspace 10 output DVI-I-1
+assign [class='Liferea'] 2
+assign [class='qutebrowser'] 1
+workspace 1 output GPU-0.HDMI-0
+workspace 2 output GPU-0.HDMI-0
+workspace 3 output GPU-0.HDMI-0
+workspace 4 output GPU-0.HDMI-0
+workspace 5 output GPU-0.HDMI-0
+workspace 6 output GPU-1.HDMI-0
+workspace 7 output GPU-1.HDMI-0
+workspace 8 output GPU-1.HDMI-0 
+workspace 9 output GPU-1.HDMI-0
+workspace 10 output GPU-1.HDMI-0
+workspace 11 output GPU-0.HDMI-0
+workspace 12 output GPU-1.HDMI-0
 bindsym $mod+ctrl+j workspace prev
 bindsym $mod+ctrl+semicolon workspace next
 #broken
@@ -66,16 +71,17 @@ bindsym $mod+ctrl+semicolon workspace next
 #bindsym $mod+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 for_window [class='Zenity'] move to workspace 1
 exec_always unified-remote-server
-exec firefox
+exec qutebrowser
 exec musicplayer
 exec /opt/urserver/urserver
 exec xset s 1800
-bindsym $mod+Shift+v exec shutdown now
-bindsym $mod+Shift+Control+v exec reboot
+bindsym $mod+Shift+v exec task sync && shutdown now
+bindsym $mod+Shift+Control+v exec task sync && reboot
 bindsym $mod+t exec monitor
 exec discord
 exec xset -dpms
 exec --no-startup-id i3-msg 'workspace 8; append_layout /home/dustin/workspace-8.json; exec konversation'
+exec --no-startup-id i3-msg 'workspace 2; append_layout /home/dustin/workspace-2.json; exec liferea'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -156,6 +162,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+c workspace 11; workspace 12
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -201,4 +208,4 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
+ 

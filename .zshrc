@@ -85,4 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/bin/git --git-dir=/home/dustin/.cfg/ --work-tree=/home/dustin'
 alias psyu='sudo yaourt -Syu'
-alias windows='sudo grub-reboot 2 && reboot'
+#alias windows='sudo grub-reboot 2 && reboot'
+windows() {
+        sudo grub-reboot 2 && reboot > /dev/null 2>&1
+}
+alias youtube='mpsyt'
+alias ts='ssh dustin@192.168.1.99'
