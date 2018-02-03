@@ -75,7 +75,7 @@ exec qutebrowser
 exec musicplayer
 exec /opt/urserver/urserver
 exec xset s 1800
-bindsym $mod+Shift+v exec task sync && shutdown now
+bindsym $mod+Shift+v exec shutdown now
 bindsym $mod+Shift+Control+v exec task sync && reboot
 bindsym $mod+t exec monitor
 exec discord
