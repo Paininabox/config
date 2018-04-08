@@ -1,36 +1,35 @@
 #!/bin/bash
 #This script will setup the computer to watch from bed with headphones connected to the phone
 #It will change sound to different device, turn on sound streaming, and turn off the right monitor
-phoneheadphones=alsa_output.pci-0000_02_00.1.hdmi-stereo-extra1
+phoneheadphones=alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 mainspeakers=alsa_output.pci-0000_00_1b.0.analog-stereo
 monitor=GPU-1.HDMI-0
 SOURCE=0
 
 if [ -z "$(xrandr --verbose | grep 'GPU-1.HDMI-0 connected 1920')" ];then
 
+pactl unload-module `pactl list | grep tcp -B1 | grep M | sed 's/[^0-9]//g'`
 pacmd set-default-sink $mainspeakers
 pacmd list-sink-inputs | grep index | while read line
 do
 pacmd move-sink-input `echo $line | cut -f2 -d' '` $mainspeakers 
 done
-pactl unload-module `pactl list | grep tcp -B1 | grep M | sed 's/[^0-9]//g'`
 xrandr --output $monitor --auto --right-of GPU-0.HDMI-0
 sleep 3
 i3-msg restart
 
 else
-pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=$SOURCE record=true port=8000
 xrandr --output $monitor --off 
+pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=$SOURCE record=true port=8000
 sleep 3
 i3-msg restart
 sleep 3
 i3-msg workspace 11
-sleep 3
-vlc
 pacmd set-default-sink $phoneheadphones
 pacmd list-sink-inputs | grep index | while read line
 do
 pacmd move-sink-input `echo $line | cut -f2 -d' '` $phoneheadphones 
 done
+vlc &>/dev/null
 
 fi
