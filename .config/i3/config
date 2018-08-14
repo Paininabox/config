@@ -27,7 +27,7 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec_always prismatik; sleep 10;  prismatik --on
+exec_always prismatik --nogui; sleep 10;  prismatik --on
 
 bindsym $mod+Shift+m exec ~/movie
 new_window normal
